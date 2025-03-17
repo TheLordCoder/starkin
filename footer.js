@@ -4,13 +4,9 @@ document.addEventListener("DOMContentLoaded", function() {
             <p>&copy; 2025 Verkkosivuni | Kaikki oikeudet pidätetään</p>
             <p>Seuraa minua:</p>
             <div class="social-links">
-                <a href="https://www.linkedin.com/in/KAYTTAJANIMI" target="_blank">
+                <a href="https://www.linkedin.com/in/felix-ayravainen" target="_blank">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" 
                         alt="LinkedIn" class="social-icon">
-                </a>
-                <a href="https://github.com/KAYTTAJANIMI" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" 
-                        alt="GitHub" class="social-icon">
                 </a>
             </div>
         </footer>
