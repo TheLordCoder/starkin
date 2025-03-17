@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     const navHTML = `
         <header>
-            <h1>Verkkosivuni</h1>
             <nav>
                 <ul>
                     <li><a href="index.html">Front page</a></li>
