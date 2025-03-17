@@ -105,3 +105,13 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+.linkedin-logo {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+.linkedin-logo:hover {
+    transform: scale(1.2);
+}
