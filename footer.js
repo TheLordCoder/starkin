@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <li>
 <a href="https://www.linkedin.com/in/felix-ayravainen" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" width="40" height="40">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" class="linkedin-logo" alt="LinkedIn">
 </a>
 </li>
     
