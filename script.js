@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <header>
                 <nav class="navbar">
                     <ul class="nav-links">
-                        <li><a href="index.html">Front page</a></li>
+                        <li><a href="/">Front page</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </nav>
