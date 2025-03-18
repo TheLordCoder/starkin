@@ -57,6 +57,23 @@ document.addEventListener("DOMContentLoaded", function () {
     addFavicon("/favicon-32x32.png", "icon", "32x32", "image/png");
     addFavicon("/favicon-16x16.png", "icon", "16x16", "image/png");
     addFavicon("/site.webmanifest", "manifest");
+
+    // Smooth scrolling -efekti lisätty sisäisiin linkkeihin
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault(); // Estetään normaali hypähtävä siirtymä
+            
+            const targetId = this.getAttribute("href"); // Haetaan kohde (esim. "#section1")
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop, // Vieritetään oikeaan kohtaan
+                    behavior: "smooth" // Pehmeä vieritys
+                    });
+            }
+        });
+    });
     
     // Lisää footer, jos sitä ei ole vielä olemassa
     if (!document.querySelector("footer")) {
