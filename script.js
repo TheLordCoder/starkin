@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
+    const currentYear = new Date().getFullYear();
+
     // Lisää navigointi vain, jos sitä ei ole vielä olemassa
     if (!document.querySelector("header")) {
         const navHTML = `
@@ -15,9 +17,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Lisää aktiivinen tila navigointilinkille
-    const links = document.querySelectorAll("nav a");
-    links.forEach(link => {
-        if (link.href === window.location.href) {
+    const currentPage = window.location.pathname.split("/").pop();
+    document.querySelectorAll("nav a").forEach(link => {
+        if (link.getAttribute("href") === currentPage) {
             link.classList.add("active");
         }
     });
