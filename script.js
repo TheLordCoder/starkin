@@ -24,9 +24,9 @@ document.addEventListener("DOMContentLoaded", function () {
         `;
         document.body.insertAdjacentHTML("afterbegin", headerHTML);
     }
-
+    
     const header = document.querySelector("header");
-
+    
     // Varmista, että navLinks löytyy ennen forEach-käyttöä
     if (navLinks.length > 0) {
         // Hakee sivun nimen ilman parametreja (esim. "index.html" tai "/")
@@ -53,17 +53,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     
     // Lisätään faviconit ja manifest
-    addFavicon("/apple-touch-icon.png", "apple-touch-icon", "180x180");
-    addFavicon("/favicon-32x32.png", "icon", "32x32", "image/png");
-    addFavicon("/favicon-16x16.png", "icon", "16x16", "image/png");
-    addFavicon("/site.webmanifest", "manifest");
-
-    // ✅ Oikeat favicon-polut
+    addFavicon("/favicon/apple-touch-icon.png", "apple-touch-icon", "180x180");
     addFavicon("/favicon/favicon-32x32.png", "icon", "32x32", "image/png");
     addFavicon("/favicon/favicon-16x16.png", "icon", "16x16", "image/png");
-    addFavicon("/favicon/apple-touch-icon.png", "apple-touch-icon", "180x180");
-    addFavicon("/favicon/site.webmanifest", "manifest");
-
+    addFavicon("/favicon/site.webmanifest", "manifest"); 
+    
     // Smooth scrolling -efekti lisätty sisäisiin linkkeihin
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener("click", function (e) {
