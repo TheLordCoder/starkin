@@ -16,8 +16,8 @@ document.addEventListener("DOMContentLoaded", function () {
         document.body.insertAdjacentHTML("afterbegin", navHTML);
     }
 
-    // Lisää aktiivinen tila navigointilinkille
-    const currentPage = window.location.pathname.split("/").pop();
+    // Lisää aktiivinen tila navigointilinkille (tarkempi vertailu)
+    const currentPage = window.location.pathname.split("/").pop() || "index.html";
     document.querySelectorAll("nav a").forEach(link => {
         if (link.getAttribute("href") === currentPage) {
             link.classList.add("active");
@@ -28,13 +28,15 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!document.querySelector("footer")) {
         const footerHTML = `
             <footer>
-                <p class="footer-text">&copy; 2020–${currentYear} | All rights reserved</p>
-                <p>More information:</p>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/felix-ayravainen" target="_blank">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" 
-                            alt="LinkedIn" class="social-icon">
-                    </a>
+                <div class="footer-container">
+                    <p class="footer-text">&copy; 2020–${currentYear} | All rights reserved</p>
+                    <p>More information:</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/felix-ayravainen" target="_blank">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" 
+                                alt="LinkedIn" class="social-icon">
+                        </a>
+                    </div>
                 </div>
             </footer>
         `;
