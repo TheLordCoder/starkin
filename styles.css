@@ -3,7 +3,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f5f5f7;
+    background-color: #ffffff; /* Valkoinen tausta */
     color: #1d1d1f;
     text-align: center;
     padding-top: 50px; /* Estää sisällön menemisen navigaation alle */
@@ -68,8 +68,8 @@ header {
 
 /* Footer */
 footer {
-    background: #ffffff; /* Valkoinen footer */
-    color: #1d1d1f; /* Tumma teksti, jotta näkyy valkoisella taustalla */
+    background: #f5f5f7; /* Vaaleanharmaa tausta */
+    color: #1d1d1f; /* Tumma teksti */
     padding: 20px 0;
     width: 100%;
     box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.05); /* Kevyt varjo erottamaan footer sisällöstä */
@@ -80,9 +80,10 @@ footer {
     max-width: 1100px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between; /* Sijoittaa vasemmalle ja oikealle */
+    justify-content: space-between; /* Asettaa vasemmalle ja oikealle */
     align-items: center;
     padding: 10px 20px;
+    flex-wrap: nowrap; /* Varmistaa, että footer ei mene päällekkäin mobiilissa */
 }
 
 /* Tekijänoikeusteksti (vasemmalla) */
@@ -112,32 +113,17 @@ footer {
 
 /* Mobiilinavigaation ja footerin responsiivisuus */
 @media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        align-items: center;
-        padding: 10px;
-    }
-
-    .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .nav-links li {
-        margin: 5px 10px;
-    }
-
     .footer-container {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: row; /* Pidetään vaakasuuntaisena */
+        justify-content: space-between; /* Tekijänoikeus vasemmalle, some oikealle */
+        text-align: left;
     }
 
     .footer-text {
-        text-align: center;
-        margin-bottom: 10px;
+        text-align: left;
     }
 
     .social-links {
-        justify-content: center;
+        justify-content: flex-end;
     }
 }
