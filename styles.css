@@ -68,10 +68,11 @@ header {
 
 /* Footer */
 footer {
-    background: #1d1d1f;
-    color: #f5f5f7;
+    background: #ffffff; /* Valkoinen footer */
+    color: #1d1d1f; /* Tumma teksti, jotta näkyy valkoisella taustalla */
     padding: 20px 0;
     width: 100%;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.05); /* Kevyt varjo erottamaan footer sisällöstä */
 }
 
 /* Footerin sisältö */
