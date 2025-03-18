@@ -50,6 +50,22 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+// Funktio faviconien lisäämiseen
+function addFavicon(href, rel, sizes, type) {
+    const link = document.createElement("link");
+    link.rel = rel;
+    if (sizes) link.sizes = sizes;
+    if (type) link.type = type;
+    link.href = href;
+    document.head.appendChild(link);
+}
+
+// Lisätään faviconit ja manifest
+addFavicon("/apple-touch-icon.png", "apple-touch-icon", "180x180");
+addFavicon("/favicon-32x32.png", "icon", "32x32", "image/png");
+addFavicon("/favicon-16x16.png", "icon", "16x16", "image/png");
+addFavicon("/site.webmanifest", "manifest");
+
     // Lisää footer, jos sitä ei ole vielä olemassa
     if (!document.querySelector("footer")) {
         const footerHTML = `
