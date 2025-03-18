@@ -1,62 +1,76 @@
 /* Yleinen sivun tyyli */
 body {
-    background-color: #f5f5f5;
-    font-family: Arial, sans-serif;
+    background-color: #f5f5f7;
+    font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 0;
     text-align: center;
+    color: #1d1d1f;
 }
 
 /* Painikkeet */
 button {
-    background: #333;
+    background: #0071e3;
     border: none;
     color: white;
     cursor: pointer;
-    padding: 10px 15px;
-    border-radius: 5px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
     transition: background 0.3s ease;
 }
 
 button:hover {
-    background: #555;
+    background: #005bb5;
 }
 
 /* Header */
 header {
-    background: #333;
-    color: white;
-    padding: 20px;
+    background: #ffffff;
+    color: #1d1d1f;
+    padding: 14px 0;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
 /* Navigaatio */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 nav ul {
     list-style: none;
     padding: 0;
+    margin: 0;
+    display: flex;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 15px;
+    margin: 0 20px;
 }
 
 nav a {
-    color: white;
-    font-weight: bold;
+    color: #1d1d1f;
+    font-weight: 500;
+    font-size: 14px;
     text-decoration: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    transition: background 0.3s ease, color 0.3s ease;
+    padding: 5px;
+    transition: color 0.3s ease;
 }
 
 nav a:hover {
-    text-decoration: underline;
-    background: rgba(255, 255, 255, 0.2);
+    color: #0071e3;
 }
 
 nav a.active {
-    background: yellow;
-    color: black;
+    color: #0071e3;
+    font-weight: bold;
 }
 
 /* Lomakkeet */
@@ -65,52 +79,54 @@ form {
     flex-direction: column;
     margin: auto;
     width: 100%;
-    max-width: 500px;
-    padding: 20px;
+    max-width: 450px;
+    padding: 24px;
     background: white;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-input, textarea, button {
+input, textarea {
     font-size: 16px;
-    margin-top: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+    margin-top: 12px;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #d2d2d7;
+    width: 100%;
 }
 
 /* Kortit ja projektit */
 .project {
-    background: #eee;
-    border-radius: 5px;
-    margin: 10px 0;
-    padding: 15px;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    background: white;
+    border-radius: 12px;
+    margin: 20px 0;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Sisältöosio */
 section {
     background: white;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    margin: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 60px 20px 20px;
     padding: 40px;
 }
 
 /* Footer */
 footer {
-    background: #333;
-    color: white;
+    background: #f5f5f7;
+    color: #6e6e73;
     font-size: 12px;
-    padding: 5px 20px; /* Pienempi korkeus */
-    position: fixed;
+    padding: 10px 20px;
+    position: relative;
     bottom: 0;
-    width: 100%; /* Footer täyttää koko alalaidan */
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Tekijänoikeusteksti vasemmalle, LinkedIn oikealle */
-    height: 40px; /* Matala footer */
+    justify-content: space-between;
+    height: 50px;
+    border-top: 1px solid #d2d2d7;
 }
 
 /* Footerin sisältö */
@@ -119,16 +135,15 @@ footer {
     font-size: 12px;
 }
 
-/* Some-linkit (LinkedIn) oikealle */
+/* Some-linkit */
 .social-links {
     display: flex;
     align-items: center;
 }
 
-/* LinkedIn-logo normaalikokoisena */
 .social-icon, .linkedin-logo {
-    width: 30px;  /* Normaalikoko */
-    height: 30px;
+    width: 24px;
+    height: 24px;
     transition: transform 0.3s ease;
 }
 
