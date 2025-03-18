@@ -30,7 +30,6 @@ document.addEventListener("DOMContentLoaded", function () {
             <footer>
                 <div class="footer-container">
                     <p class="footer-text">&copy; 2020–${currentYear} | All rights reserved</p>
-                    <p>More information:</p>
                     <div class="social-links">
                         <a href="https://www.linkedin.com/in/felix-ayravainen" target="_blank">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" 
