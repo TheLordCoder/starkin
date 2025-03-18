@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     const header = document.querySelector("header");
-    
+
     // Varmista, että navLinks löytyy ennen forEach-käyttöä
     if (navLinks.length > 0) {
         // Hakee sivun nimen ilman parametreja (esim. "index.html" tai "/")
@@ -36,24 +36,11 @@ document.addEventListener("DOMContentLoaded", function () {
         // Lisää aktiivinen tila navigointilinkille
         navLinks.forEach(link => {
             const linkPath = new URL(link.href, window.location.origin).pathname;
-            if (currentPath === linkPath || currentPath.startsWith(linkPath + "/")) {
+            if (currentPath === linkPath || (currentPath.startsWith(linkPath) && currentPath[linkPath.length] === "/")) {
                 link.classList.add("active");
             }
         });
     }
-    
-    // Lisää navigaation taustasumennus vieritettäessä
-    let scrollTimeout;
-    window.addEventListener("scroll", function () {
-        if (!scrollTimeout) {
-            scrollTimeout = requestAnimationFrame(() => {
-                let opacity = Math.min(0.8, window.scrollY / 300);
-                header.style.background = `rgba(0, 0, 0, ${opacity})`;
-                header.style.backdropFilter = window.scrollY > 10 ? "blur(10px)" : "none";
-                scrollTimeout = null;
-            });
-        }
-    });
     
     // Funktio faviconien lisäämiseen
     function addFavicon(href, rel, sizes, type) {
