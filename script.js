@@ -1,12 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
     const currentYear = new Date().getFullYear();
-
-    // 🔹 Poistaa .html-päätteen URL:sta automaattisesti
-    if (window.location.pathname.endsWith(".html")) {
+    const navLinks = document.querySelectorAll(".nav-links a");
+    const currentPath = new URL(window.location.href).pathname;
+    
+    // Poistaa .html-päätteen URL:sta automaattisesti
+    if (window.location.pathname.endsWith(".html") && !window.location.pathname.includes("/")) {
         const newUrl = window.location.pathname.replace(".html", "");
+        document.title = document.title.replace(".html", ""); // Päivittää myös sivun otsikon
         history.replaceState(null, "", newUrl);
     }
-
+    
     // Tarkista, onko navigaatio jo olemassa
     if (!document.querySelector("header")) {
         const headerHTML = `
@@ -23,49 +26,51 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     const header = document.querySelector("header");
-    const navLinks = document.querySelectorAll(".nav-links a");
-
+    
     // Varmista, että navLinks löytyy ennen forEach-käyttöä
     if (navLinks.length > 0) {
         // Hakee sivun nimen ilman parametreja (esim. "index.html" tai "/")
         let currentPage = window.location.pathname.split("/").pop();
         if (currentPage === "" || currentPage === "index") currentPage = "/"; // Oletus etusivulle
-
+    
         // Lisää aktiivinen tila navigointilinkille
         navLinks.forEach(link => {
-            if (link.getAttribute("href") === currentPage || (link.getAttribute("href") === "/" && currentPage === "/")) {
+            const linkPath = new URL(link.href, window.location.origin).pathname;
+            if (currentPath === linkPath || currentPath.startsWith(linkPath + "/")) {
                 link.classList.add("active");
             }
         });
     }
-
+    
     // Lisää navigaation taustasumennus vieritettäessä
+    let scrollTimeout;
     window.addEventListener("scroll", function () {
-        if (window.scrollY > 10) {
-            header.style.background = "rgba(0, 0, 0, 0.8)";
-            header.style.backdropFilter = "blur(10px)";
-        } else {
-            header.style.background = "rgba(0, 0, 0, 0.8)";
-            header.style.backdropFilter = "blur(10px)";
+        if (!scrollTimeout) {
+            scrollTimeout = requestAnimationFrame(() => {
+                let opacity = Math.min(0.8, window.scrollY / 300);
+                header.style.background = `rgba(0, 0, 0, ${opacity})`;
+                header.style.backdropFilter = window.scrollY > 10 ? "blur(10px)" : "none";
+                scrollTimeout = null;
+            });
         }
     });
-
-// Funktio faviconien lisäämiseen
-function addFavicon(href, rel, sizes, type) {
-    const link = document.createElement("link");
-    link.rel = rel;
-    if (sizes) link.sizes = sizes;
-    if (type) link.type = type;
-    link.href = href;
-    document.head.appendChild(link);
-}
-
-// Lisätään faviconit ja manifest
-addFavicon("/apple-touch-icon.png", "apple-touch-icon", "180x180");
-addFavicon("/favicon-32x32.png", "icon", "32x32", "image/png");
-addFavicon("/favicon-16x16.png", "icon", "16x16", "image/png");
-addFavicon("/site.webmanifest", "manifest");
-
+    
+    // Funktio faviconien lisäämiseen
+    function addFavicon(href, rel, sizes, type) {
+        const link = document.createElement("link");
+        link.rel = rel;
+        if (sizes) link.sizes = sizes;
+        if (type) link.type = type;
+        link.href = href;
+        document.head.appendChild(link);
+    }
+    
+    // Lisätään faviconit ja manifest
+    addFavicon("/apple-touch-icon.png", "apple-touch-icon", "180x180");
+    addFavicon("/favicon-32x32.png", "icon", "32x32", "image/png");
+    addFavicon("/favicon-16x16.png", "icon", "16x16", "image/png");
+    addFavicon("/site.webmanifest", "manifest");
+    
     // Lisää footer, jos sitä ei ole vielä olemassa
     if (!document.querySelector("footer")) {
         const footerHTML = `
