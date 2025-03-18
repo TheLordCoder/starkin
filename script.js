@@ -1,34 +1,46 @@
 document.addEventListener("DOMContentLoaded", function () {
     const currentYear = new Date().getFullYear();
 
-    // Lisää navigointi vain, jos sitä ei ole vielä olemassa
+    // Tarkista, onko navigaatio jo olemassa
     if (!document.querySelector("header")) {
-        const navHTML = `
+        const headerHTML = `
             <header>
-                <nav>
-                    <ul>
+                <nav class="navbar">
+                    <a href="index.html" class="logo">
+                    </a>
+                    <ul class="nav-links">
                         <li><a href="index.html">Front page</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </nav>
             </header>
         `;
-        document.body.insertAdjacentHTML("afterbegin", navHTML);
+        document.body.insertAdjacentHTML("afterbegin", headerHTML);
     }
+
+    const header = document.querySelector("header");
+    const navLinks = document.querySelectorAll(".nav-links a");
 
     // Lisää aktiivinen tila navigointilinkille
     const currentPage = window.location.pathname.split("/").pop().split("?")[0];
-    const navLinks = document.querySelectorAll("nav a");
-    
-    if (navLinks.length > 0) {
-        navLinks.forEach(link => {
-            if (link.getAttribute("href") === currentPage) {
-                link.classList.add("active");
-            }
-        });
-    }
+    navLinks.forEach(link => {
+        if (link.getAttribute("href") === currentPage) {
+            link.classList.add("active");
+        }
+    });
 
-    // Lisää footer vain, jos sitä ei ole vielä olemassa
+    // Lisää navigaation taustasumennus vieritettäessä
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 10) {
+            header.style.background = "rgba(255, 255, 255, 0.8)";
+            header.style.backdropFilter = "blur(15px)";
+        } else {
+            header.style.background = "rgba(255, 255, 255, 0.9)";
+            header.style.backdropFilter = "blur(10px)";
+        }
+    });
+
+    // Lisää footer
     if (!document.querySelector("footer")) {
         const footerHTML = `
             <footer>
