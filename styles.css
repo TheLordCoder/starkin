@@ -102,17 +102,15 @@ section {
 footer {
     background: #333;
     color: white;
-    font-size: 14px;
-    padding: 10px 20px;
+    font-size: 12px;
+    padding: 5px 20px; /* Pienempi korkeus */
     position: fixed;
     bottom: 0;
-    width: 100%;
+    width: 100%; /* Footer täyttää koko alalaidan */
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    max-width: 1200px;
-    left: 50%;
-    transform: translateX(-50%);
+    justify-content: space-between; /* Tekijänoikeusteksti vasemmalle, LinkedIn oikealle */
+    height: 40px; /* Matala footer */
 }
 
 /* Footerin sisältö */
@@ -121,20 +119,19 @@ footer {
     font-size: 12px;
 }
 
-/* Some-linkit footerissa */
+/* Some-linkit (LinkedIn) oikealle */
 .social-links {
     display: flex;
     align-items: center;
-    gap: 15px;
 }
 
-/* Some-ikonit */
+/* LinkedIn-logo normaalikokoisena */
 .social-icon, .linkedin-logo {
-    width: 20px;
-    height: 20px;
+    width: 30px;  /* Normaalikoko */
+    height: 30px;
     transition: transform 0.3s ease;
 }
 
 .social-icon:hover, .linkedin-logo:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
