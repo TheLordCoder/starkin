@@ -1,66 +1,31 @@
-/* Yleinen tyyli */ 
+/* Yleinen tyyli */
 body {
-    background-color: #f5f5f7;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f5f5f7;
     color: #1d1d1f;
     text-align: center;
-    padding-top: 70px; /* Estää headerin peittämisen */
+    padding-top: 50px; /* Estää sisällön menemisen navigaation alle */
 }
 
 /* Header */
 header {
-    background: white;
-    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.9); /* Lievä läpinäkyvyys */
+    backdrop-filter: blur(10px); /* Tyylikäs sumennus taustalle */
+    padding: 10px 0;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    display: flex;
-    justify-content: center;
-    position: fixed;  /* Kiinnittää ylös */
+    position: fixed;
     width: 100%;
     top: 0;
     left: 0;
-    z-index: 1000;  /* Pitää navigaation muun sisällön päällä */
+    z-index: 1000;
+    transition: background 0.3s ease;
 }
 
-/* Navigaatio */
+/* Navigaatiopalkki */
 .navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Navigointilinkit */
-.nav-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-}
-
-.nav-links li {
-    margin: 0 15px;
-}
-
-.nav-links a {
-    color: #1d1d1f;
-    font-weight: 500;
-    text-decoration: none;
-    padding: 8px 12px;
-    transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: #0071e3;
-}
-
-/* Aktiivinen linkki */
-.nav-links a.active {
-    color: #0071e3;
-    font-weight: bold;
-    border-bottom: 2px solid #0071e3;
-    padding-bottom: 5px;
-}
+    max-width: 11
