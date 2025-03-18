@@ -1,36 +1,40 @@
-/* Yleinen sivun tyyli */
+/* Yleinen tyyli */
 body {
-    background-color: #f5f5f7;
-    font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #f5f5f7; /* Apple-tyylinen vaalea tausta */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     margin: 0;
     padding: 0;
     text-align: center;
-    color: #1d1d1f;
+    color: #1d1d1f; /* Tumma teksti */
 }
 
 /* Painikkeet */
 button {
-    background: #0071e3;
+    background: #0071e3; /* Apple Blue */
     border: none;
     color: white;
     cursor: pointer;
-    padding: 12px 20px;
+    padding: 12px 18px;
     border-radius: 8px;
-    font-weight: 600;
     font-size: 16px;
-    transition: background 0.3s ease;
+    font-weight: 500;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
     background: #005bb5;
+    transform: scale(1.05);
 }
 
 /* Header */
 header {
-    background: #ffffff;
+    background: white;
     color: #1d1d1f;
-    padding: 14px 0;
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 15px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     position: fixed;
     width: 100%;
     top: 0;
@@ -38,49 +42,78 @@ header {
 }
 
 /* Navigaatio */
-nav {
+.navbar {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: space-between;
+    width: 100%;
 }
 
-nav ul {
+.navbar ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
 }
 
-nav ul li {
-    margin: 0 20px;
+.navbar ul li {
+    margin: 0 15px;
 }
 
-nav a {
+.navbar ul li a {
     color: #1d1d1f;
     font-weight: 500;
-    font-size: 14px;
     text-decoration: none;
-    padding: 5px;
+    padding: 8px 12px;
+    border-radius: 5px;
     transition: color 0.3s ease;
 }
 
-nav a:hover {
+.navbar ul li a:hover {
     color: #0071e3;
 }
 
-nav a.active {
-    color: #0071e3;
-    font-weight: bold;
+.navbar .menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Mobiilinavigaatio */
+@media (max-width: 768px) {
+    .navbar ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    .navbar ul.active {
+        display: flex;
+    }
+
+    .navbar ul li {
+        margin: 10px 0;
+    }
+
+    .navbar .menu-toggle {
+        display: block;
+    }
 }
 
 /* Lomakkeet */
 form {
     display: flex;
     flex-direction: column;
-    margin: auto;
+    margin: 20px auto;
     width: 100%;
-    max-width: 450px;
-    padding: 24px;
+    max-width: 400px;
+    padding: 20px;
     background: white;
     border-radius: 12px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -88,20 +121,30 @@ form {
 
 input, textarea {
     font-size: 16px;
-    margin-top: 12px;
+    margin-top: 10px;
     padding: 12px;
     border-radius: 8px;
-    border: 1px solid #d2d2d7;
-    width: 100%;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: #0071e3;
 }
 
 /* Kortit ja projektit */
 .project {
     background: white;
-    border-radius: 12px;
-    margin: 20px 0;
+    border-radius: 10px;
+    margin: 20px;
     padding: 20px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.project:hover {
+    transform: scale(1.02);
 }
 
 /* Sisältöosio */
@@ -109,44 +152,57 @@ section {
     background: white;
     border-radius: 12px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    margin: 60px 20px 20px;
+    margin: 20px;
     padding: 40px;
 }
 
 /* Footer */
 footer {
-    background: #f5f5f7;
-    color: #6e6e73;
-    font-size: 12px;
-    padding: 10px 20px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    background: #1d1d1f;
+    color: white;
+    font-size: 14px;
+    padding: 15px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 50px;
-    border-top: 1px solid #d2d2d7;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
 
-/* Footerin sisältö */
 .footer-text {
     margin: 0;
-    font-size: 12px;
 }
 
-/* Some-linkit */
 .social-links {
     display: flex;
     align-items: center;
 }
 
-.social-icon, .linkedin-logo {
-    width: 24px;
-    height: 24px;
+.social-icon {
+    width: 30px;
+    height: 30px;
     transition: transform 0.3s ease;
+    margin-left: 10px;
 }
 
-.social-icon:hover, .linkedin-logo:hover {
+.social-icon:hover {
     transform: scale(1.1);
+}
+
+/* Responsiivisuus */
+@media (max-width: 600px) {
+    section {
+        padding: 20px;
+    }
+
+    .project {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    button {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
 }
