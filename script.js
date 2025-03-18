@@ -58,7 +58,11 @@ document.addEventListener("DOMContentLoaded", function () {
     addFavicon("/favicon-16x16.png", "icon", "16x16", "image/png");
     addFavicon("/site.webmanifest", "manifest");
 
-    <link rel="icon" type="image/png" href="https://TheLordCoder.github.io/favicon/favicon-32x32.png">
+    // ✅ Oikeat favicon-polut
+    addFavicon("/favicon/favicon-32x32.png", "icon", "32x32", "image/png");
+    addFavicon("/favicon/favicon-16x16.png", "icon", "16x16", "image/png");
+    addFavicon("/favicon/apple-touch-icon.png", "apple-touch-icon", "180x180");
+    addFavicon("/favicon/site.webmanifest", "manifest");
 
     // Smooth scrolling -efekti lisätty sisäisiin linkkeihin
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
