@@ -53,15 +53,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     
     // Lisätään faviconit ja manifest
-    addFavicon("/apple-touch-icon.png", "apple-touch-icon", "180x180");
-    addFavicon("/favicon-32x32.png", "icon", "32x32", "image/png");
-    addFavicon("/favicon-16x16.png", "icon", "16x16", "image/png");
-    addFavicon("/site.webmanifest", "manifest");
+    // addFavicon("/apple-touch-icon.png", "apple-touch-icon", "180x180");
+    // addFavicon("/favicon-32x32.png", "icon", "32x32", "image/png");
+    // addFavicon("/favicon-16x16.png", "icon", "16x16", "image/png");
+    // addFavicon("/site.webmanifest", "manifest");
 
     // <link rel="icon" type="image/png" href="/favicon/favicon-32x32.png">
     // <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
     // <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png">
     // <link rel="manifest" href="/favicon/site.webmanifest">
+
+    <link rel="icon" type="image/png" href="https://TheLordCoder.github.io/favicon/favicon-32x32.png">
 
     // Smooth scrolling -efekti lisätty sisäisiin linkkeihin
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
