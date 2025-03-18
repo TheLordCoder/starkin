@@ -6,8 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const headerHTML = `
             <header>
                 <nav class="navbar">
-                    <a href="index.html" class="logo">
-                    </a>
                     <ul class="nav-links">
                         <li><a href="index.html">Front page</a></li>
                         <li><a href="contact.html">Contact</a></li>
@@ -21,13 +19,19 @@ document.addEventListener("DOMContentLoaded", function () {
     const header = document.querySelector("header");
     const navLinks = document.querySelectorAll(".nav-links a");
 
-    // Lisää aktiivinen tila navigointilinkille
-    const currentPage = window.location.pathname.split("/").pop().split("?")[0];
-    navLinks.forEach(link => {
-        if (link.getAttribute("href") === currentPage) {
-            link.classList.add("active");
-        }
-    });
+    // Varmista, että navLinks löytyy ennen forEach-käyttöä
+    if (navLinks.length > 0) {
+        // Hakee sivun nimen ilman parametreja (esim. index.html tai pelkkä "/")
+        let currentPage = window.location.pathname.split("/").pop();
+        if (currentPage === "") currentPage = "index.html"; // Oletus etusivulle
+
+        // Lisää aktiivinen tila navigointilinkille
+        navLinks.forEach(link => {
+            if (link.getAttribute("href") === currentPage) {
+                link.classList.add("active");
+            }
+        });
+    }
 
     // Lisää navigaation taustasumennus vieritettäessä
     window.addEventListener("scroll", function () {
@@ -40,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Lisää footer
+    // Lisää footer, jos sitä ei ole vielä olemassa
     if (!document.querySelector("footer")) {
         const footerHTML = `
             <footer>
