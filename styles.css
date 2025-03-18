@@ -11,7 +11,7 @@ body {
 
 /* Header (musta läpikuultava navigaatio, kuten Applen sivuilla) */
 header {
-    background: rgba(0, 0, 0, 0.8); /* Musta läpikuultava */
+    background: rgba(0, 0, 0, 0.8); /* Musta läpikuultava, ei muutu vieritettäessä */
     backdrop-filter: blur(10px); /* Sumennusefekti */
     padding: 10px 0;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
@@ -20,7 +20,6 @@ header {
     top: 0;
     left: 0;
     z-index: 1000;
-    transition: background 0.3s ease;
 }
 
 /* Navigaatiopalkki */
