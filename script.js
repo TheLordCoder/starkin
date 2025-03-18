@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!document.querySelector("footer")) {
         const footerHTML = `
             <footer>
-                <p class="footer-text">&copy; 2025 | All rights reserved</p>
+                <p class="footer-text">&copy; 2020–${currentYear} | All rights reserved</p>
                 <p>More information:</p>
                 <div class="social-links">
                     <a href="https://www.linkedin.com/in/felix-ayravainen" target="_blank">
