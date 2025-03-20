@@ -57,6 +57,18 @@ document.addEventListener("DOMContentLoaded", function () {
     addFavicon("/favicon/favicon-32x32.png", "icon", "32x32", "image/png");
     addFavicon("/favicon/favicon-16x16.png", "icon", "16x16", "image/png");
     addFavicon("/favicon/site.webmanifest", "manifest"); 
+
+    // Tunnistaa URL-osoitteet tekstistä ja muuntaa ne klikattaviksi linkeiksi
+    const urlRegex = /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www\.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w\-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w!\/]*))?)/g;
+    
+    export default function createAnchors(message) {
+        return message.replace(urlRegex, (match, ...args) => {
+            if (/(src=|href=|mailto:)/.test(message.slice(Math.max(0, args[args.length - 2] - 7), args[args.length - 2]))) return match;
+            const href = /^([a-zA-Z]+:)?\/\//.test(match) ? match : 'http://' + match;
+            return `<a href="${href}" target="_blank" rel="noopener noreferrer">${match.replace(/^www\./, '')}</a>`;
+        });
+    }
+
     
     // Smooth scrolling -efekti lisätty sisäisiin linkkeihin
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
