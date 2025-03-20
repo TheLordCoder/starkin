@@ -11,7 +11,7 @@ function cleanUrl() {
     }
 } cleanUrl();
 
-// Ensures the navigation header exists
+// Ensures the header and navigation exists
 function ensureHeader() {
     if (!document.querySelector("header")) {
         document.body.insertAdjacentHTML("afterbegin", `
@@ -28,9 +28,7 @@ function ensureHeader() {
 // Generates navigation links dynamically
 function generateNavLinks() {
     const pages = [
-        { name: "Home", path: "/" },
-        { name: "About", path: "/about" },
-        { name: "Services", path: "/services" },
+        { name: "About", path: "/" },
         { name: "Contact", path: "/contact" }
     ];
     return pages.map(page => `<li><a href="${page.path}">${page.name}</a></li>`).join("");
@@ -113,4 +111,5 @@ function observeDOMChanges() {
         }
     }).observe(document.body, { childList: true, subtree: true });
 } observeDOMChanges();
+
 });
