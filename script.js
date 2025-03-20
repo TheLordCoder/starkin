@@ -35,7 +35,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const pages = [
             { name: "About", path: "/" },
             { name: "Contact", path: "/contact" },
-            { name: "Services", path: "/services" }
         ];
         return pages.map(page => `<li><a href="${page.path}">${page.name}</a></li>`).join("\n");
     }
