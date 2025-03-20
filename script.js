@@ -99,6 +99,20 @@ function setupSmoothScrolling() {
     });
 } setupSmoothScrolling();
 
+// Make sure the user doesn't submit an empty form
+function formValidation() {
+    document.querySelector("form").addEventListener("submit", function(event) {
+        let name = document.getElementById("name").value.trim();
+        let email = document.getElementById("email").value.trim();
+        let message = document.getElementById("message").value.trim();
+        
+        if (!name || !email || !message) {
+            alert("Please fill in all fields before submitting.");
+            event.preventDefault();
+        }
+    });
+} formValidation();
+
 // Observes DOM changes and restores missing elements
 function observeDOMChanges() {
     new MutationObserver(() => {
