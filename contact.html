@@ -23,6 +23,7 @@
         </form>
     </section>
 
+    <!-- Make sure the user doesn't submit an empty form -->
     <script>
         document.querySelector("form").addEventListener("submit", function(event) {
             let name = document.getElementById("name").value.trim();
