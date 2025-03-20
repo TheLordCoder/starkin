@@ -1,15 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
-
-// Removes .html extension dynamically from the URL
-function cleanUrl() {
-    let currentPath = new URL(window.location.href).pathname.split("?")[0];
-
-    if (currentPath.endsWith(".html")) {
-        const newPath = currentPath.replace(".html", "");
-        document.title = document.title.replace(".html", "");
-        history.replaceState(null, "", newPath);
-    }
-} cleanUrl();
+    const currentYear = new Date().getFullYear();
+    const currentPath = new URL(window.location.href).pathname.split("?")[0];
+    
+    // Removes .html extension dynamically from the URL
+    function cleanUrl() {
+        let currentPath = new URL(window.location.href).pathname.split("?")[0];
+        
+        if (currentPath.endsWith(".html")) {
+            const newPath = currentPath.replace(".html", "");
+            document.title = document.title.replace(".html", "");
+            history.replaceState(null, "", newPath);
+        }
+    } cleanUrl();
 
 // Ensures the navigation header exists
 function ensureHeader() {
