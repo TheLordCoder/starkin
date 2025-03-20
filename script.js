@@ -1,13 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
     const currentYear = new Date().getFullYear();
-    const currentPath = new URL(window.location.href).pathname;
+    const currentPath = new URL(window.location.href).pathname.split("?")[0];
 
-    // Automatically removes the .html extension from the URL
+    // Removes .html extension from the URL dynamically
     function cleanUrl() {
         try {
-            if (currentPath.endsWith(".html") && !currentPath.includes("/")) {
+            if (currentPath.endsWith(".html")) {
                 const newUrl = currentPath.replace(".html", "");
-                document.title = document.title.replace(".html", ""); // Also updates the page title
+                document.title = document.title.replace(".html", "");
                 history.replaceState(null, "", newUrl);
             }
         } catch (error) {
@@ -16,39 +16,45 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     cleanUrl();
 
-    // Add a header and navigation section if it doesn't exist
+    // Creates the header with a dynamically generated navigation menu
     function ensureHeader() {
         if (!document.querySelector("header")) {
             document.body.insertAdjacentHTML("afterbegin", `
                 <header>
                     <nav class="navbar">
                         <ul class="nav-links">
-                            <li><a href="/">About</a></li>
-                            <li><a href="/contact">Contact</a></li>
+                            ${generateNavLinks()}
                         </ul>
                     </nav>
                 </header>
             `);
         }
     }
+
+    function generateNavLinks() {
+        const pages = [
+            { name: "About", path: "/" },
+            { name: "Contact", path: "/contact" },
+            { name: "Services", path: "/services" }
+        ];
+        return pages.map(page => `<li><a href="${page.path}">${page.name}</a></li>`).join("\n");
+    }
     ensureHeader();
 
-    // Add an active class to the navigation
+    // Highlights the active navigation link
     function highlightNavLinks() {
-        try {
-            document.querySelectorAll(".nav-links a").forEach(link => {
-                const linkPath = new URL(link.href, window.location.origin).pathname;
-                if (currentPath === linkPath || (currentPath.startsWith(linkPath) && currentPath[linkPath.length] === "/")) {
-                    link.classList.add("active");
-                }
-            });
-        } catch (error) {
-            console.error("Error highlighting navigation links:", error);
-        }
+        document.querySelectorAll(".nav-links a").forEach(link => {
+            const linkPath = new URL(link.href, window.location.origin).pathname.split("?")[0];
+            if (currentPath === linkPath || (currentPath.startsWith(linkPath) && currentPath[linkPath.length] === "/")) {
+                link.classList.add("active");
+            } else {
+                link.classList.remove("active");
+            }
+        });
     }
     highlightNavLinks();
 
-    // Add favicons and manifest
+    // Ensures favicons are present
     function ensureFavicons() {
         const favicons = [
             { href: "/favicon/apple-touch-icon.png", rel: "apple-touch-icon", sizes: "180x180" },
@@ -58,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
         ];
 
         favicons.forEach(({ href, rel, sizes, type }) => {
-            if (!document.querySelector(`link[href="${href}"]`)) {
+            if (!document.querySelector(`link[rel='${rel}'][href='${href}']`)) {
                 const link = document.createElement("link");
                 link.rel = rel;
                 if (sizes) link.sizes = sizes;
@@ -70,33 +76,23 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     ensureFavicons();
 
-    // Recognizes URLs from text and converts them into clickable links
-    const urlRegex = /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www\.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w\-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w!\/]*))?)/g;
-
-    export default function createAnchors(message) {
-        return message.replace(urlRegex, (match, ...args) => {
-            if (/(src=|href=|mailto:)/.test(message.slice(Math.max(0, args[args.length - 2] - 7), args[args.length - 2]))) return match;
-            const href = /^([a-zA-Z]+:)?\/\//.test(match) ? match : 'http://' + match;
-            return `<a href="${href}" target="_blank" rel="noopener noreferrer">${match.replace(/^www\./, '')}</a>`;
-        });
-    }
-
-    // "Smooth scrolling" to internal links with event delegation
+    // Smooth scrolling with fixed header offset
     document.body.addEventListener("click", function (e) {
         const anchor = e.target.closest('a[href^="#"]');
         if (anchor) {
             e.preventDefault();
             const targetElement = document.querySelector(anchor.getAttribute("href"));
             if (targetElement) {
+                const offset = document.querySelector("header")?.offsetHeight || 0;
                 window.scrollTo({
-                    top: targetElement.offsetTop,
+                    top: targetElement.offsetTop - offset,
                     behavior: "smooth"
                 });
             }
         }
     });
 
-    // Add a footer if it doesn't exist.
+    // Ensures a footer is present
     function ensureFooter() {
         if (!document.querySelector("footer")) {
             document.body.insertAdjacentHTML("beforeend", `
@@ -116,14 +112,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     ensureFooter();
 
-    // Monitors if header or footer is removed and adds them back
+    // Monitors changes to the DOM and restores missing elements
     function observeDOMChanges() {
-        const observer = new MutationObserver(() => {
-            ensureHeader();
-            ensureFooter();
-            highlightNavLinks();
+        const observer = new MutationObserver((mutations) => {
+            let headerMissing = !document.querySelector("header");
+            let footerMissing = !document.querySelector("footer");
+            if (headerMissing) ensureHeader();
+            if (footerMissing) ensureFooter();
+            if (headerMissing || footerMissing) highlightNavLinks();
         });
-
+        
         observer.observe(document.body, { childList: true, subtree: true });
     }
     observeDOMChanges();
