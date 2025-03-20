@@ -1,17 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const currentYear = new Date().getFullYear();
-    const currentPath = new URL(window.location.href).pathname.split("?")[0];
-    
-    // Removes .html extension dynamically from the URL
-    function cleanUrl() {
-        let currentPath = new URL(window.location.href).pathname.split("?")[0];
-        
-        if (currentPath.endsWith(".html")) {
-            const newPath = currentPath.replace(".html", "");
-            document.title = document.title.replace(".html", "");
-            history.replaceState(null, "", newPath);
-        }
-    } cleanUrl();
+
+// Removes .html extension dynamically from the URL
+function cleanUrl() {
+    let currentPath = new URL(window.location.href).pathname.split("?")[0];
+
+    if (currentPath.endsWith(".html")) {
+        const newPath = currentPath.replace(".html", "");
+        document.title = document.title.replace(".html", "");
+        history.replaceState(null, "", newPath);
+    }
+} cleanUrl();
 
 // Ensures the navigation header exists
 function ensureHeader() {
@@ -30,7 +28,9 @@ function ensureHeader() {
 // Generates navigation links dynamically
 function generateNavLinks() {
     const pages = [
-        { name: "About", path: "/" },
+        { name: "Home", path: "/" },
+        { name: "About", path: "/about" },
+        { name: "Services", path: "/services" },
         { name: "Contact", path: "/contact" }
     ];
     return pages.map(page => `<li><a href="${page.path}">${page.name}</a></li>`).join("");
@@ -113,3 +113,4 @@ function observeDOMChanges() {
         }
     }).observe(document.body, { childList: true, subtree: true });
 } observeDOMChanges();
+});
