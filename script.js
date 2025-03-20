@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
             { name: "Contact", path: "/contact" }
         ];
         return pages.map(page => `<li><a href="${page.path}">${page.name}</a></li>`).join("");
-    }
+    } generateNavLinks();
 
     // Highlights the active navigation link
     function highlightNavLinks() {
