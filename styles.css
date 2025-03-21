@@ -43,7 +43,7 @@ main {
 /* ========================================= */
 
 header {
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: rgba(0, 0, 0, 0.9);
     -webkit-backdrop-filter: saturate(100%) blur(10px);
     backdrop-filter: saturate(100%) blur(10px);
     border-bottom: 1px solid rgba(255,255,255,0.08);
