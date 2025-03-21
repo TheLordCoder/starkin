@@ -288,7 +288,7 @@ header {
 
 .typewriter {
     animation: typing 2.5s steps(25, end) forwards,
-               blink-caret 0.5s step-end infinite;
+               blink-caret 1.0s step-end infinite;
     border-right: 0.15em solid currentColor;
     display: inline-block;
     font-family: monospace;
