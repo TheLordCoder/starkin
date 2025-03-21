@@ -44,8 +44,8 @@ main {
 
 header {
     background-color: rgba(0, 0, 0, 0.50);
-    -webkit-backdrop-filter: saturate(200%) blur(25px);
-    backdrop-filter: saturate(200%) blur(25px);
+    -webkit-backdrop-filter: saturate(180%) blur(25px);
+    backdrop-filter: saturate(180%) blur(25px);
     border-bottom: 1px solid rgba(255,255,255,0.08);
     position: fixed;
     top: 0;
