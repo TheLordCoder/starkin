@@ -7,23 +7,28 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <section>
-        <h2>Contact</h2>
-        <form action="submit-form.php" method="POST">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+    <section class="contact-section">
+        <h2></h2>
+        <form class="contact-form" action="submit-form.php" method="POST">
+            <div class="input-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            <div class="input-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
 
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" placeholder="Type your message here" required></textarea>
+            <div class="input-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" placeholder="Type your message here" required></textarea>
+            </div>
 
-            <button type="submit" aria-label="Send message">Send</button>
+            <button type="submit" class="contact-button" aria-label="Send message">Send</button>
         </form>
     </section>
 
-    <!-- Make sure the user doesn't submit an empty form -->
     <script>
         document.querySelector("form").addEventListener("submit", function(event) {
             let name = document.getElementById("name").value.trim();
@@ -36,6 +41,6 @@
             }
         });
     </script>
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
