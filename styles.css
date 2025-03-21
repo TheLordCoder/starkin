@@ -293,16 +293,15 @@ header {
     border-right: 0.15em solid currentColor;
     letter-spacing: 0.15em;
     font-family: monospace;
-    max-width: 100%;
-    width: 0;
     animation:
         typing 2.5s steps(25, end) forwards,
         blink-caret 0.75s step-end infinite;
+    width: 0;
 }
 
 @keyframes typing {
-    from { width: 0 }
-    to { width: 30ch }
+    from { width: 0; }
+    to { width: 100%; }
 }
 
 @keyframes blink-caret {
