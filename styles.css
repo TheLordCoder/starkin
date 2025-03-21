@@ -43,7 +43,7 @@ main {
 /* ========================================= */
 
 header {
-    background: #1d1d1f;
+    background: rgba(29, 29, 31, 0.72);
     backdrop-filter: saturate(180%) blur(20px);
     border-bottom: 1px solid rgba(255,255,255,0.1);
     position: fixed;
