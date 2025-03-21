@@ -287,26 +287,26 @@ header {
 /* ========================================= */
 
 .typewriter {
-    display: inline-block;
-    overflow: hidden;
-    white-space: nowrap;
+    animation: typing 2.5s steps(25, end) forwards,
+               blink-caret 0.5s step-end infinite;
     border-right: 0.15em solid currentColor;
+    display: inline-block;
     font-family: monospace;
     letter-spacing: 0.15em;
-    width: 0;
-    animation: typing 2.5s steps(25, end) forwards, 
-               blink-caret 0.75s step-end 2.5s infinite;
     max-width: max-content;
-}
-
-@keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
 }
 
 @keyframes blink-caret {
     from, to { border-color: transparent; }
     50% { border-color: currentColor; }
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -344,13 +344,6 @@ footer {
     text-align: left;
 }
 
-.social-links {
-    display: flex;
-    flex: 1;
-    gap: 15px;
-    justify-content: flex-end;
-}
-
 .social-icon {
     height: 30px;
     transition: transform 0.3s ease;
@@ -359,4 +352,11 @@ footer {
 
 .social-icon:hover {
     transform: scale(1.1);
+}
+
+.social-links {
+    display: flex;
+    flex: 1;
+    gap: 15px;
+    justify-content: flex-end;
 }
