@@ -219,7 +219,7 @@ header {
 /* ========================================= */
 /*        DARK MODE — DYNAMIC THEME          */
 /* ========================================= */
-
+/*
 @media (prefers-color-scheme: dark) {
     html, body {
         background-color: #000000;
@@ -281,7 +281,7 @@ header {
         filter: brightness(125%);
     }
 }
-
+*/
 /* ========================================= */
 /*              TYPEWRITER EFFECT            */
 /* ========================================= */
