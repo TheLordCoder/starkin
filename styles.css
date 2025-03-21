@@ -6,12 +6,6 @@ html {
     background-color: #ffffff;
 }
 
-@media (prefers-color-scheme: dark) {
-    html {
-        background-color: #000000;
-    }
-}
-
 html, body {
     height: 100%;
     margin: 0;
@@ -299,4 +293,75 @@ footer {
     flex: 1;
     gap: 15px;
     justify-content: flex-end;
+}
+
+/* ========================================= */
+/*        DARK MODE — DYNAMIC THEME          */
+/* ========================================= */
+
+@media (prefers-color-scheme: dark) {
+    html {
+        background-color: #000000;
+    }
+
+    body {
+        background-color: #000000;
+        color: #f0f0f0;
+    }
+
+    header {
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-links a {
+        color: rgba(255, 255, 255, 0.85);
+    }
+
+    .nav-links a.active {
+        color: #ffffff;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.85);
+    }
+
+    .contact-section {
+        background: #1a1a1a;
+        box-shadow: 0 4px 10px rgba(255, 255, 255, 0.05);
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        background: #000000;
+        border: 1px solid #444;
+        color: #f0f0f0;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+        border-color: #4da3ff;
+    }
+
+    .contact-button {
+        background: #4da3ff;
+        color: #000;
+    }
+
+    .contact-button:hover {
+        background: #1f80e0;
+    }
+
+    footer {
+        background: #111;
+        color: #ccc;
+    }
+
+    .footer-text {
+        color: #888;
+    }
+
+    .social-icon {
+        filter: brightness(80%);
+    }
+
+    .social-icon:hover {
+        filter: brightness(100%);
+    }
 }
