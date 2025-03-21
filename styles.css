@@ -187,6 +187,28 @@ header {
 }
 
 /* ========================================= */
+/*              typewriter effect            */
+/* ========================================= */
+
+.typewriter {
+  font-family: monospace;
+  border-right: 3px solid black;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  animation: typing 3s steps(30, end) forwards, blink 0.8s infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* ========================================= */
 /*                  FOOTER                   */
 /* ========================================= */
 
