@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const footer = document.createElement("footer");
             footer.innerHTML = `
                 <div class="footer-container">
-                    <p class="footer-text">Copyright &copy; ${new Date().getFullYear()} Felix Äyräväinen. All rights reserved.</p>
+                    <p class="footer-text">Copyright &copy; ${new Date().getFullYear()} Stark. All rights reserved.</p>
                     <div class="social-links">
                         <a href="https://www.linkedin.com/in/felix-ayravainen/" target="_blank">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" 
