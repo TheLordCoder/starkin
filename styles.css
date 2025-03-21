@@ -43,9 +43,9 @@ main {
 /* ========================================= */
 
 header {
-    background-color: rgba(0, 0, 0, 0.8);
-    -webkit-backdrop-filter: saturate(500%) blur(10px);
-    backdrop-filter: saturate(500%) blur(10px);
+    background-color: rgba(0, 0, 0, 0.85);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255,255,255,0.08);
     position: fixed;
     top: 0;
