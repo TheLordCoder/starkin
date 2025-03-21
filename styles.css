@@ -2,11 +2,8 @@
 /*               GENERAL STYLES              */
 /* ========================================= */
 
-html {
-    background-color: #ffffff;
-}
-
 html, body {
+    background-color: #ffffff;
     height: 100%;
     margin: 0;
     padding: 0;
@@ -227,11 +224,7 @@ header {
 /* ========================================= */
 
 @media (prefers-color-scheme: dark) {
-    html {
-        background-color: #000000;
-    }
-
-    body {
+    html, body {
         background-color: #000000;
         color: #f0f0f0;
     }
@@ -285,7 +278,7 @@ header {
     }
 
     footer {
-        background: #111;
+        background-color: #000000;
         color: #ccc;
     }
 
@@ -335,7 +328,7 @@ header {
 /* ========================================= */
 
 footer {
-    background: #f5f5f7;
+    background-color: #ffffff;
     box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.05);
     color: #1d1d1f;
     padding: 20px 0 calc(20px + env(safe-area-inset-bottom));
