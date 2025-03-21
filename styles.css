@@ -294,9 +294,9 @@ header {
     font-family: monospace;
     letter-spacing: 0.15em;
     width: 0;
-
     animation: typing 2.5s steps(25, end) forwards, 
                blink-caret 0.75s step-end 2.5s infinite;
+    max-width: max-content;
 }
 
 @keyframes typing {
