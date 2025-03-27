@@ -27,6 +27,8 @@ body {
     font-weight: 400;
     letter-spacing: -0.01em;
     text-align: center;
+    -webkit-font-feature-settings: "tnum";
+    font-feature-settings: "tnum";
 }
 
 input, textarea, button, select {
@@ -36,6 +38,14 @@ input, textarea, button, select {
 main {
     flex: 1;
     padding-top: 60px;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid #0071e3;
+    outline-offset: 2px;
 }
 
 /* ========================================= */
@@ -94,6 +104,97 @@ header {
 }
 
 /* ========================================= */
+/*               RESPONSIVENESS              */
+/* ========================================= */
+
+@media (max-width: 768px) {
+    .contact-section {
+        margin: 40px auto;
+        padding: 24px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-text {
+        order: 2;
+        margin-top: 10px;
+    }
+
+    .social-links {
+        order: 1;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 15px;
+    }
+
+    .contact-button {
+        font-size: 17px;
+        padding: 16px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 15px;
+        min-height: 44px;
+    }
+
+    .contact-section {
+        padding: 16px;
+        width: 92%;
+    }
+
+    .typewriter {
+        font-size: 20px;
+    }
+}
+
+/* ========================================= */
+/*              TYPEWRITER EFFECT            */
+/* ========================================= */
+
+.typewriter {
+    animation: typing 2.5s steps(25, end) forwards,
+               blink-caret 1.0s step-end infinite;
+    border-right: 0.15em solid currentColor;
+    display: inline-block;
+    font-family: monospace;
+    letter-spacing: 0.15em;
+    max-width: max-content;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    font-weight: 500;
+    font-size: 24px;
+    color: #1d1d1f;
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: currentColor; }
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .typewriter {
+        animation: none;
+        border: none;
+        width: auto;
+    }
+}
+
+/* ========================================= */
 /*               CONTACT FORM                */
 /* ========================================= */
 
@@ -106,6 +207,7 @@ header {
     text-align: center;
     width: 90%;
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
 }
 
 .contact-section h2 {
@@ -182,143 +284,6 @@ header {
 }
 
 /* ========================================= */
-/*               RESPONSIVENESS              */
-/* ========================================= */
-
-@media (max-width: 768px) {
-    .contact-section {
-        margin: 40px auto;
-        padding: 20px;
-    }
-
-    .footer-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .footer-text {
-        order: 2;
-        text-align: center;
-        margin-top: 10px;
-    }
-
-    .social-links {
-        order: 1;
-        justify-content: center;
-        margin-bottom: 10px;
-    }
-}
-
-@media (max-width: 480px) {
-    body {
-        font-size: 16px;
-    }
-
-    .contact-button {
-        font-size: 18px;
-        padding: 16px;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-        font-size: 16px;
-        min-height: 44px;
-    }
-
-    .contact-section {
-        padding: 16px;
-        width: 90%;
-    }
-
-    .typewriter {
-        font-size: 24px;
-    }
-}
-
-/* ========================================= */
-/*        DARK MODE — DYNAMIC THEME          */
-/* ========================================= */
-/*
-@media (prefers-color-scheme: dark) {
-    html, body {
-        background-color: #000000;
-        color: #f5f5f7;
-    }
-
-    header {
-        background: rgba(0, 0, 0, 0.9);
-        border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .nav-links a {
-        color: #f5f5f7;
-    }
-
-    .nav-links a.active {
-        border-color: #f5f5f7;
-    }
-
-    .contact-section {
-        background: #1c1c1e;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-        background: #000;
-        color: #fff;
-        border-color: #444;
-    }
-
-    .contact-button {
-        background: #4da3ff;
-        color: #000;
-    }
-
-    .contact-button:hover {
-        background: #1f80e0;
-    }
-}
-*/
-
-/* ========================================= */
-/*              TYPEWRITER EFFECT            */
-/* ========================================= */
-
-.typewriter {
-    animation: typing 2.5s steps(25, end) forwards,
-               blink-caret 1.0s step-end infinite;
-    border-right: 0.15em solid currentColor;
-    display: inline-block;
-    font-family: monospace;
-    letter-spacing: 0.15em;
-    max-width: max-content;
-    overflow: hidden;
-    white-space: nowrap;
-    width: 0;
-    font-weight: 500;
-    font-size: 24px;
-    color: #1d1d1f;
-}
-
-@keyframes blink-caret {
-    from, to { border-color: transparent; }
-    50% { border-color: currentColor; }
-}
-
-@keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .typewriter {
-        animation: none;
-        border: none;
-        width: auto;
-    }
-}
-
-/* ========================================= */
 /*                  FOOTER                   */
 /* ========================================= */
 
@@ -332,7 +297,6 @@ footer {
 .footer-container {
     align-items: center;
     display: flex;
-    flex-wrap: nowrap;
     justify-content: space-between;
     margin: 0 auto;
     max-width: 1100px;
