@@ -195,6 +195,63 @@ header {
 }
 
 /* ========================================= */
+/*        DARK MODE — DYNAMIC THEME          */
+/* ========================================= */
+
+@media (prefers-color-scheme: dark) {
+    html, body {
+        background-color: #000000;
+        color: #f5f5f7;
+    }
+
+    header {
+        background: rgba(0, 0, 0, 0.9);
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .nav-links a {
+        color: #f5f5f7;
+    }
+
+    .nav-links a.active {
+        border-color: #f5f5f7;
+    }
+
+    .contact-section {
+        background: #1c1c1e;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        background: #000;
+        border-color: #444;
+        color: #fff;
+    }
+
+    .contact-button {
+        background: #4da3ff;
+        color: #000;
+    }
+
+    .contact-button:hover {
+        background: #1f80e0;
+    }
+
+    .typewriter {
+        color: #f5f5f7;
+    }
+
+    footer {
+        background-color: #1c1c1e;
+        color: #f5f5f7;
+    }
+
+    .footer-text {
+        color: #aaa;
+    }
+}
+
+/* ========================================= */
 /*               CONTACT FORM                */
 /* ========================================= */
 
