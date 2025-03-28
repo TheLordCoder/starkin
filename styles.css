@@ -3,12 +3,12 @@
 /* ========================================= */
 
 :root {
-    --header-height: 48px;
+    --header-height: 64px;
 }
 
-@media (max-width: 480px) {
+@media (min-width: 768px) {
     :root {
-        --header-height: 64px;
+        --header-height: 48px;
     }
 }
 
@@ -290,6 +290,11 @@ header {
 
     footer {
         background-color: #1c1c1e;
+        color: #f5f5f7;
+    }
+
+    .footer-text {
+        color: #aaa;
     }
 }
 
