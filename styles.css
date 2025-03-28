@@ -39,6 +39,251 @@ main {
 }
 
 /* ========================================= */
+/*               RESPONSIVENESS              */
+/* ========================================= */
+
+@media (max-width: 768px) {
+    .contact-section {
+        margin: 40px auto;
+        padding: 20px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-text {
+        margin-top: 10px;
+        order: 2;
+        text-align: center;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        background: rgba(0, 0, 0, 0.95);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        left: 0;
+        padding: 20px;
+        position: absolute;
+        top: 48px;
+        width: 100%;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .social-links {
+        justify-content: center;
+        margin-bottom: 10px;
+        order: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 16px;
+    }
+
+    .contact-button {
+        font-size: 18px;
+        padding: 16px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 16px;
+        min-height: 44px;
+    }
+
+    .contact-section {
+        padding: 16px;
+        width: 90%;
+    }
+
+    .typewriter {
+        font-size: 24px;
+    }
+}
+
+/* ========================================= */
+/*           HEADER & NAVIGATION             */
+/* ========================================= */
+
+header {
+    background-color: rgba(0, 0, 0, 0.85);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 48px;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+.navbar {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 980px;
+    padding: 0 20px;
+    width: 100%;
+}
+
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #f5f5f7;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.nav-links li {
+    margin: 0;
+}
+
+.nav-links a {
+    color: #f5f5f7;
+    font-size: 12px;
+    font-weight: 400;
+    padding: 8px 12px;
+    position: relative;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #f5f5f7;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.nav-links a.active {
+    border-bottom: 2px solid #f5f5f7;
+    font-weight: 500;
+}
+
+/* ========================================= */
+/*              TYPEWRITER EFFECT            */
+/* ========================================= */
+
+.typewriter {
+    animation: typing 2.5s steps(25, end) forwards,
+               blink-caret 1.0s step-end infinite;
+    border-right: 0.15em solid currentColor;
+    color: #1d1d1f;
+    display: inline-block;
+    font-family: monospace;
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    max-width: max-content;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: currentColor; }
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .typewriter {
+        animation: none;
+        border: none;
+        width: auto;
+    }
+}
+
+/* ========================================= */
+/*        DARK MODE — DYNAMIC THEME          */
+/* ========================================= */
+
+@media (prefers-color-scheme: dark) {
+    html, body {
+        background-color: #000000;
+        color: #f5f5f7;
+    }
+
+    header {
+        background: rgba(0, 0, 0, 0.9);
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .nav-links a {
+        color: #f5f5f7;
+    }
+
+    .nav-links a.active {
+        border-color: #f5f5f7;
+    }
+
+    .contact-section {
+        background: #1c1c1e;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        background: #000;
+        border-color: #444;
+        color: #fff;
+    }
+
+    .contact-button {
+        background: #4da3ff;
+        color: #000;
+    }
+
+    .contact-button:hover {
+        background: #1f80e0;
+    }
+
+    .typewriter {
+        color: #f5f5f7;
+    }
+
+    footer {
+        background-color: #1c1c1e;
+    }
+}
+
+/* ========================================= */
 /*               CONTACT FORM                */
 /* ========================================= */
 
@@ -169,249 +414,4 @@ footer {
     flex: 1;
     gap: 15px;
     justify-content: flex-end;
-}
-
-/* ========================================= */
-/*           HEADER & NAVIGATION             */
-/* ========================================= */
-
-header {
-    background-color: rgba(0, 0, 0, 0.85);
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 48px;
-    z-index: 1000;
-    transition: background-color 0.3s ease;
-}
-
-.navbar {
-    align-items: center;
-    display: flex;
-    height: 100%;
-    justify-content: space-between;
-    margin: 0 auto;
-    max-width: 980px;
-    padding: 0 20px;
-    width: 100%;
-}
-
-.nav-toggle {
-    display: none;
-    background: none;
-    border: none;
-    color: #f5f5f7;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-.nav-links {
-    display: flex;
-    gap: 20px;
-    list-style: none;
-}
-
-.nav-links li {
-    margin: 0;
-}
-
-.nav-links a {
-    color: #f5f5f7;
-    font-size: 12px;
-    font-weight: 400;
-    padding: 8px 12px;
-    position: relative;
-    text-decoration: none;
-    transition: opacity 0.3s ease;
-}
-
-.nav-links a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 2px;
-    background: #f5f5f7;
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.3s ease;
-}
-
-.nav-links a:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
-}
-
-.nav-links a.active {
-    border-bottom: 2px solid #f5f5f7;
-    font-weight: 500;
-}
-
-/* ========================================= */
-/*               RESPONSIVENESS              */
-/* ========================================= */
-
-@media (max-width: 768px) {
-    .contact-section {
-        margin: 40px auto;
-        padding: 20px;
-    }
-
-    .footer-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .footer-text {
-        margin-top: 10px;
-        order: 2;
-        text-align: center;
-    }
-
-    .nav-toggle {
-        display: block;
-    }
-
-    .nav-links {
-        background: rgba(0, 0, 0, 0.95);
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        display: none;
-        flex-direction: column;
-        gap: 10px;
-        left: 0;
-        padding: 20px;
-        position: absolute;
-        top: 48px;
-        width: 100%;
-    }
-
-    .nav-links.open {
-        display: flex;
-    }
-
-    .social-links {
-        justify-content: center;
-        margin-bottom: 10px;
-        order: 1;
-    }
-}
-
-@media (max-width: 480px) {
-    body {
-        font-size: 16px;
-    }
-
-    .contact-button {
-        font-size: 18px;
-        padding: 16px;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-        font-size: 16px;
-        min-height: 44px;
-    }
-
-    .contact-section {
-        padding: 16px;
-        width: 90%;
-    }
-
-    .typewriter {
-        font-size: 24px;
-    }
-}
-
-/* ========================================= */
-/*              TYPEWRITER EFFECT            */
-/* ========================================= */
-
-.typewriter {
-    animation: typing 2.5s steps(25, end) forwards,
-               blink-caret 1.0s step-end infinite;
-    border-right: 0.15em solid currentColor;
-    color: #1d1d1f;
-    display: inline-block;
-    font-family: monospace;
-    font-size: 24px;
-    font-weight: 500;
-    letter-spacing: 0.15em;
-    max-width: max-content;
-    overflow: hidden;
-    white-space: nowrap;
-    width: 0;
-}
-
-@keyframes blink-caret {
-    from, to { border-color: transparent; }
-    50% { border-color: currentColor; }
-}
-
-@keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .typewriter {
-        animation: none;
-        border: none;
-        width: auto;
-    }
-}
-
-/* ========================================= */
-/*        DARK MODE — DYNAMIC THEME          */
-/* ========================================= */
-
-@media (prefers-color-scheme: dark) {
-    html, body {
-        background-color: #000000;
-        color: #f5f5f7;
-    }
-
-    header {
-        background: rgba(0, 0, 0, 0.9);
-        border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .nav-links a {
-        color: #f5f5f7;
-    }
-
-    .nav-links a.active {
-        border-color: #f5f5f7;
-    }
-
-    .contact-section {
-        background: #1c1c1e;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-        background: #000;
-        border-color: #444;
-        color: #fff;
-    }
-
-    .contact-button {
-        background: #4da3ff;
-        color: #000;
-    }
-
-    .contact-button:hover {
-        background: #1f80e0;
-    }
-
-    .typewriter {
-        color: #f5f5f7;
-    }
-
-    footer {
-        background-color: #1c1c1e;
-    }
 }
