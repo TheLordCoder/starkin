@@ -20,7 +20,7 @@
     --color-secondary-text: #555;
     --color-label: #333;
 }
-
+/*
 @media (prefers-color-scheme: dark) {
     :root {
         --color-bg: #000000;
@@ -39,7 +39,7 @@
         --color-footer-text: #aaa;
         --color-secondary-text: #ccc;
         --color-label: #ccc;
-    }
+    }*/
 }
 
 /* ========================================= */
