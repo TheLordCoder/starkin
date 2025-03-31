@@ -108,7 +108,7 @@ header {
 }
 
 .fixed-color-bar {
-    background-color: #ff6600;
+    background-color: #000000;
     height: 48px;
     width: 100%;
     position: fixed;
