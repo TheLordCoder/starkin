@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    
+     
     // Removes .html extension dynamically from the URL
     function cleanUrl() {
         let currentPath = new URL(window.location.href).pathname.split("?")[0];
