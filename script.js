@@ -13,12 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Ensures the header and navigation exists
     function ensureHeader() {
-        if (!document.querySelector(".fixed-color-bar")) {
-            document.body.insertAdjacentHTML("afterbegin", `
-            <div class="fixed-color-bar"></div>
-            `);
-        }
-        
         if (!document.querySelector("header")) {
             document.body.insertAdjacentHTML("afterbegin", `
                 <header>
