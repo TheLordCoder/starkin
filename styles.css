@@ -108,13 +108,13 @@ header {
 }
 
 .fixed-color-bar {
-    background-color: #000000;
-    height: 48px;
-    width: 100%;
+    background-color: #000;
     position: fixed;
-    top: 0;
+    top: -100vh;
     left: 0;
-    z-index: 999;
+    width: 100%;
+    height: 200vh;
+    z-index: -1;
     pointer-events: none;
 }
 
