@@ -110,13 +110,14 @@ header {
 .fixed-color-bar {
     background-color: #000;
     position: fixed;
-    top: -100vh;
+    bottom: 48px;
     left: 0;
     width: 100%;
-    height: 200vh;
+    top: -100vh;
     z-index: -1;
     pointer-events: none;
 }
+
 
 .navbar {
     max-width: 980px;
