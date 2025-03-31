@@ -107,18 +107,6 @@ header {
     transition: background-color 0.3s ease;
 }
 
-.fixed-color-bar {
-    background-color: #000;
-    position: fixed;
-    bottom: 48px;
-    left: 0;
-    width: 100%;
-    top: -100vh;
-    z-index: -1;
-    pointer-events: none;
-}
-
-
 .navbar {
     max-width: 980px;
     height: 100%;
