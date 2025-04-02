@@ -28,6 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
      function generateNavLinks() {
           const pages = [
                { name: "About", path: "/" },
+               { name: "Resume", path: "/resume" },
+               // { name: "Publications", path: "/publications" },
                { name: "Contact", path: "/contact" }
           ];
           return pages.map(page => `<li><a href="${page.path}">${page.name}</a></li>`).join("");
