@@ -1,6 +1,4 @@
-/* ========================================= */
-/*               GENERAL STYLES              */
-/* ========================================= */
+/* ============= GENERAL STYLES ============= */
  
 * {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -90,9 +88,7 @@ textarea:focus-visible {
     outline-offset: 2px;
 }
 
-/* ========================================= */
-/*           HEADER & NAVIGATION             */
-/* ========================================= */
+/* ========= HEADER & NAVIGATION ========== */
 
 header {
     background-color: var(--color-header-bg);
@@ -145,9 +141,7 @@ header {
     font-weight: 500;
 }
 
-/* ========================================= */
-/*               RESPONSIVENESS              */
-/* ========================================= */
+/* ============ RESPONSIVENESS ============ */
 
 @media (max-width: 768px) {
     .contact-section {
@@ -198,9 +192,7 @@ header {
     }
 }
 
-/* ========================================= */
-/*              TYPEWRITER EFFECT            */
-/* ========================================= */
+/* =========== TYPEWRITER EFFECT =========== */
 
 .typewriter {
     animation: typing 2.5s steps(25, end) forwards,
@@ -236,9 +228,49 @@ header {
     }
 }
 
-/* ========================================= */
-/*               CONTACT FORM                */
-/* ========================================= */
+/* ================ RESUME ================= */
+
+.job-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+}
+
+.job-company {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+}
+
+.job-location {
+    font-size: 1rem;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.job-tasks {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.school h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+}
+
+.school-dates {
+    font-style: italic;
+    margin-bottom: 0.2rem;
+}
+
+.skills-list {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+/* ============ CONTACT FORM ============ */
 
 .contact-section {
     background: var(--color-form-bg);
@@ -326,9 +358,7 @@ header {
     transform: scale(1.02);
 }
 
-/* ========================================= */
-/*                  FOOTER                   */
-/* ========================================= */
+/* ================ FOOTER ================ */
 
 footer {
     background-color: var(--color-footer-bg);
