@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+     
      // Removes .html extension dynamically from the URL
      function cleanUrl() {
           let currentPath = new URL(window.location.href).pathname.split("?")[0];
@@ -38,10 +39,11 @@ document.addEventListener("DOMContentLoaded", () => {
      // Highlights the active navigation link
      function highlightNavLinks() {
           const currentPath = new URL(window.location.href).pathname.split("?")[0];
-          
           document.querySelectorAll(".nav-links a").forEach(link => {
                const linkPath = new URL(link.href, window.location.origin).pathname.split("?")[0];
-               link.classList.toggle("active", currentPath === linkPath || (currentPath.startsWith(linkPath) && (currentPath[linkPath.length] === "/" || currentPath[linkPath.length] === undefined)));
+               link.classList.toggle("active", currentPath === linkPath || 
+               (currentPath.startsWith(linkPath) && (currentPath[linkPath.length] === "/" || 
+               currentPath[linkPath.length] === undefined)));
           });
      } highlightNavLinks();
      
