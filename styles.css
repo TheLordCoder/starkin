@@ -231,7 +231,7 @@ header {
 /* ================ RESUME ================= */
 
 .experience h2 {
-    border-top: 1px solid #ccc;
+    border-top: 1px solid var(--color-accent);
     color: var(--color-accent);
     font-size: 1rem;
     font-weight: 700;
@@ -278,6 +278,7 @@ header {
     list-style-type: disc;
     margin-bottom: 2rem;
     padding-left: 1.5rem;
+    text-align: left;
 }
 
 .job-title {
