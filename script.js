@@ -126,6 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     if (!document.querySelector("footer")) {
                          ensureFooter();
                     }
+                    updateJobDurations();
                }, 100);
           }).observe(document.body, { childList: true, subtree: true });
      } observeDOMChanges();
