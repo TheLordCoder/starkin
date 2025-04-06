@@ -81,28 +81,18 @@ document.addEventListener("DOMContentLoaded", () => {
      } setupSmoothScrolling();
      
      // Job Duration Auto Calculator
-     function calculateMonthsBetween(start, end) {
-          const now = new Date();
-          const startDate = new Date(start + "-01");
-          const endDate = end === "present" ? now : new Date(end + "-01");
-          
-          let months =
-               (endDate.getFullYear() - startDate.getFullYear()) * 12 +
-               (endDate.getMonth() - startDate.getMonth());
-          if (months < 0) months = 0;
-          return months;
-     }
-     document.querySelectorAll(".job-dates").forEach(el => {
-          const start = el.dataset.start;
-          const end = el.dataset.end;
-          const months = calculateMonthsBetween(start, end);
-          if (!isNaN(months)) {
-               const durationEl = el.querySelector(".job-duration");
-               if (durationEl) {
-                    durationEl.textContent = `· ${months} mos`;
-               }
-          }
-     });
+     function updateJobDurations() {
+          document.querySelectorAll('.job-dates').forEach(el => {
+               const { start, end } = el.dataset;
+               const startDate = new Date(start + '-01');
+               const endDate = end === 'present' ? new Date() : new Date(end + '-01');
+               const totalMonths = Math.max(0, (endDate.getFullYear() - startDate.getFullYear()) * 12 + (endDate.getMonth() - startDate.getMonth()));
+               const years = Math.floor(totalMonths / 12), months = totalMonths % 12;
+               const duration = [years && `${years} yr${years > 1 ? 's' : ''}`, (months || totalMonths === 0) && `${months} mo${months > 1 ? 's' : ''}`]
+                    .filter(Boolean).join(' ');
+               el.querySelector('.job-duration')?.textContent = `· ${duration}`;
+          });
+     } updateJobDurations();
      
      // Ensures the footer exists
      function ensureFooter() {
