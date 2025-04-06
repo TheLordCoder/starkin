@@ -230,16 +230,42 @@ header {
 
 /* ================ RESUME ================= */
 
-.job-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 0.3rem;
+.experience h2 {
+    border-top: 1px solid #ccc;
+    color: var(--color-accent);
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    padding-top: 1.5rem;
+    text-transform: uppercase;
 }
 
 .job-company {
     font-size: 1.1rem;
     font-weight: 500;
     margin-bottom: 0.2rem;
+}
+
+.job-dates {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-top: 0.5rem;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.job-duration {
+    font-size: 0.9rem;
+    color: var(--color-secondary-text);
+    margin-top: 0.2rem;
+}
+
+.job-header {
+    align-items: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 1rem;
 }
 
 .job-location {
@@ -250,8 +276,14 @@ header {
 
 .job-tasks {
     list-style-type: disc;
-    padding-left: 1.5rem;
     margin-bottom: 2rem;
+    padding-left: 1.5rem;
+}
+
+.job-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
 }
 
 .school h3 {
@@ -266,8 +298,8 @@ header {
 
 .skills-list {
     list-style-type: disc;
-    padding-left: 1.5rem;
     margin-top: 0.5rem;
+    padding-left: 1.5rem;
 }
 
 /* ============ CONTACT FORM ============ */
