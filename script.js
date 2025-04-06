@@ -81,18 +81,28 @@ document.addEventListener("DOMContentLoaded", () => {
      } setupSmoothScrolling();
      
      // Job Duration Auto Calculator
-     function updateJobDurations() {
-          document.querySelectorAll('.job-dates').forEach(el => {
-               const { start, end } = el.dataset;
-               const startDate = new Date(start + '-01');
-               const endDate = end === 'present' ? new Date() : new Date(end + '-01');
-               const totalMonths = Math.max(0, (endDate.getFullYear() - startDate.getFullYear()) * 12 + (endDate.getMonth() - startDate.getMonth()));
-               const years = Math.floor(totalMonths / 12), months = totalMonths % 12;
-               const duration = [years && `${years} yr${years > 1 ? 's' : ''}`, (months || totalMonths === 0) && `${months} mo${months > 1 ? 's' : ''}`]
-                    .filter(Boolean).join(' ');
-               el.querySelector('.job-duration')?.textContent = `· ${duration}`;
-          });
-     } updateJobDurations();
+      function updateJobDurations() {
+           document.querySelectorAll('.job-dates').forEach(el => {
+                const { start, end } = el.dataset;
+                if (!start || !end) return;
+                
+                const startDate = new Date(start + '-01');
+                const endDate = end === 'present' ? new Date() : new Date(end + '-01');
+                
+                if (isNaN(startDate) || isNaN(endDate)) return;
+                
+                const totalMonths = Math.max(0, (endDate.getFullYear() - startDate.getFullYear()) * 12 + (endDate.getMonth() - startDate.getMonth()));
+                const years = Math.floor(totalMonths / 12), months = totalMonths % 12;
+                
+                const duration = [years && `${years} yr${years > 1 ? 's' : ''}`, (months || totalMonths === 0) && `${months} mo${months > 1 ? 's' : ''}`]
+                     .filter(Boolean).join(' ');
+                
+                const target = el.querySelector('.job-duration');
+                if (target) {
+                     target.textContent = `· ${duration}`;
+                }
+           });
+      } updateJobDurations();
      
      // Ensures the footer exists
      function ensureFooter() {
