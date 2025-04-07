@@ -231,18 +231,47 @@ header {
 /* ============ LOGO SLIDER ============ */
 
 .logo-slider {
-    overflow: hidden;
-    white-space: nowrap;
-    position: relative;
-    width: 100%;
     height: 100px;
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.logo-slider::before,
+.logo-slider::after {
+    content: '';
+    height: 100%;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: 60px;
+    z-index: 2;
+}
+
+.logo-slider::before {
+    background: linear-gradient(to right, var(--color-bg) 0%, transparent 100%);
+    left: 0;
+}
+
+.logo-slider::after {
+    background: linear-gradient(to left, var(--color-bg) 0%, transparent 100%);
+    right: 0;
+}
+
+.logo-slider-wrapper {
     background-color: var(--color-bg);
-    margin-top: 2rem;
+    overflow: hidden;
+    padding: 20px 0;
+    position: relative;
+    z-index: 1;
 }
 
 .logo-track {
-    display: flex;
     animation: scroll 30s linear infinite;
+    display: flex;
+    position: relative;
+    z-index: 1;
 }
 
 .logo-track img {
