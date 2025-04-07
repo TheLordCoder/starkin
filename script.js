@@ -78,6 +78,37 @@ document.addEventListener("DOMContentLoaded", () => {
           });
      } setupSmoothScrolling();
      
+     // Logo slider to front page
+     function initLogoSlider() {
+          const cleanPath = window.location.pathname
+               .replace(/\/$/, "")
+               .replace(/\.html$/, "");
+          
+          if (cleanPath === "") {
+               const logoFiles = ['logo1.png', 'logo2.png', 'logo3.png', 'logo4.png'];
+               const footer = document.querySelector("footer");
+               
+               if (footer) {
+                    const wrapper = document.createElement('div');
+                    wrapper.className = "logo-slider-wrapper";
+                    wrapper.innerHTML = `
+                    <div class="logo-slider">
+                    <div class="logo-track" id="logo-track"></div>
+                    </div>
+                    `;
+                    footer.parentNode.insertBefore(wrapper, footer);
+                    
+                    const track = wrapper.querySelector('#logo-track');
+                    logoFiles.concat(logoFiles).forEach(file => {
+                         const img = document.createElement('img');
+                         img.src = `logos/${file}`;
+                         img.alt = "Logo";
+                         track.appendChild(img);
+                    });
+               }
+          }
+     } initLogoSlider();
+     
      // Job Duration Auto Calculator
       function updateJobDurations() {
            document.querySelectorAll('.job-dates').forEach(el => {
