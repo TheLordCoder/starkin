@@ -13,6 +13,36 @@
         <h1 class="typewriter">Hello!</h1>
         <p>Welcome to my web pages</p>
     </main>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            if (window.location.pathname === "/etusivu.html") {
+                const logoFiles = ['logo1.png', 'logo2.png', 'logo3.png', 'logo4.png'];
+                const footer = document.querySelector("footer");
+                
+                if (footer) {
+                    const wrapper = document.createElement('div');
+                    wrapper.className = "logo-slider-wrapper";
+                    wrapper.innerHTML = `
+                    <div class="logo-slider">
+                    <div class="logo-track" id="logo-track"></div>
+                    </div>
+                    `;
+                    
+                    footer.parentNode.insertBefore(wrapper, footer);
+                    
+                    const track = wrapper.querySelector('#logo-track');
+                    logoFiles.concat(logoFiles).forEach(file => {
+                        const img = document.createElement('img');
+                        img.src = `logos/${file}`; // Vaihda "logos/" tarvittaessa
+                        img.alt = "Logo";
+                        track.appendChild(img);
+                    });
+                }
+            }
+        });
+    </script>
+
     <script src="script.js"></script>
 </body>
 </html>
