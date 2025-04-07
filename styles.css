@@ -228,6 +228,45 @@ header {
     }
 }
 
+/* ============ LOGO SLIDER ============ */
+
+.logo-slider {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    width: 100%;
+    height: 100px;
+    background-color: var(--color-bg);
+    margin-top: 2rem;
+}
+
+.logo-track {
+    display: flex;
+    animation: scroll 30s linear infinite;
+}
+
+.logo-track img {
+    height: 60px;
+    margin: 0 20px;
+    object-fit: contain;
+}
+
+@media (min-width: 768px) {
+    .logo-track img {
+        height: 80px;
+        margin: 0 30px;
+    }
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
 /* ================ RESUME ================= */
 
 .experience h2 {
