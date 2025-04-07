@@ -103,34 +103,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
            });
       } updateJobDurations();
-
-     // Logo slider
-     function insertLogoSlider() {
-          if (!document.querySelector(".logo-slider-wrapper")) {
-               const logoSliderHTML = `
-               <div class="logo-slider-wrapper">
-               <div class="logo-slider">
-               <div class="logo-track">
-               <img src="logo1.png" alt="Asiakas 1" />
-               <img src="logo2.png" alt="Asiakas 2" />
-               <img src="logo3.png" alt="Asiakas 3" />
-               <img src="logo4.png" alt="Asiakas 4" />
-               <img src="logo1.png" alt="Asiakas 1" />
-               <img src="logo2.png" alt="Asiakas 2" />
-               <img src="logo3.png" alt="Asiakas 3" />
-               <img src="logo4.png" alt="Asiakas 4" />
-               </div>
-               </div>
-               </div>
-               `;
-               document.body.insertAdjacentHTML("beforeend", logoSliderHTML);
-          }
-     }
      
      // Ensures the footer exists
      function ensureFooter() {
           if (!document.querySelector("footer")) {
-               insertLogoSlider();
                const footer = document.createElement("footer");
                footer.innerHTML = `
                <div class="footer-container">
