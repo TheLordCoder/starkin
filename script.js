@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
      // Removes .html extension dynamically from the URL
      function cleanUrl() {
           let currentPath = new URL(window.location.href).pathname.split("?")[0];
-          
           if (currentPath.endsWith(".html")) {
                const newPath = currentPath.replace(".html", "");
                document.title = document.title.replace(".html", "");
@@ -45,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
                (currentPath.startsWith(linkPath) && (currentPath[linkPath.length] === "/" || 
                currentPath[linkPath.length] === undefined)));
           });
-     } highlightNavLinks();
+     }
      
      // Ensures the favicons exist
      function ensureFavicons() {
@@ -55,7 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
                { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicon/favicon-16x16.png" },
                { rel: "manifest", href: "/favicon/site.webmanifest" }
           ];
-          
           icons.forEach(iconData => {
                if (!document.querySelector(`link[href='${iconData.href}']`)) {
                     const link = document.createElement("link");
@@ -139,5 +137,4 @@ document.addEventListener("DOMContentLoaded", () => {
                }, 100);
           }).observe(document.body, { childList: true, subtree: true });
      } observeDOMChanges();
-
 });
