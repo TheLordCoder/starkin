@@ -46,6 +46,23 @@ document.addEventListener("DOMContentLoaded", () => {
           });
      }
      
+     // Header background darkens at top, lightens on scroll
+     function HeaderScrollEffect() {
+          const header = document.querySelector("header");
+          if (!header) return;
+          
+          function updateHeaderBackground() {
+               if (window.scrollY > 10) {
+                    header.classList.add("scrolled");
+               } else {
+                    header.classList.remove("scrolled");
+               }
+          }
+          window.addEventListener("scroll", updateHeaderBackground);
+          updateHeaderBackground();
+     } HeaderScrollEffect();
+
+     
      // Ensures the favicons exist
      function ensureFavicons() {
           const icons = [
@@ -64,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
      } ensureFavicons();
      
      // Smooth scrolling with header offset
-     function setupSmoothScrolling() {
+     function SmoothScrolling() {
           document.body.addEventListener("click", (e) => {
                const anchor = e.target.closest('a[href^="#"]');
                if (anchor) {
@@ -76,10 +93,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                }
           });
-     } setupSmoothScrolling();
+     } SmoothScrolling();
      
      // Logo slider to front page
-     function initLogoSlider() {
+     function LogoSlider() {
           const cleanPath = window.location.pathname
                .replace(/\/$/, "")
                .replace(/\.html$/, "");
@@ -107,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     });
                }
           }
-     } initLogoSlider();
+     } LogoSlider();
      
      // Job Duration Auto Calculator
       function updateJobDurations() {
