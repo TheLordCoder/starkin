@@ -436,6 +436,21 @@ header.scrolled {
 
 /* ============ CONTACT FORM ============ */
 
+body.contact-page {
+    height: 100svh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+main.contact-main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0;
+}
+
 .contact-section {
     background: var(--color-form-bg);
     border-radius: 12px;
