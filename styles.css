@@ -70,7 +70,6 @@ body {
     text-align: center;
     -webkit-font-feature-settings: "tnum";
     font-feature-settings: "tnum";
-    overflow: hidden; /* new line */
 }
 
 input, textarea, button, select {
@@ -447,14 +446,6 @@ header.scrolled {
     width: 90%;
     box-shadow: 0 4px 12px var(--color-box-shadow);
     transition: all 0.3s ease;
-
-    /* new lines */
-    height: calc(100svh - 48px - 60px);
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
 }
 
 .contact-section h2 {
