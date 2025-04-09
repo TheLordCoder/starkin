@@ -141,8 +141,8 @@ document.addEventListener("DOMContentLoaded", () => {
                const duration = [years && `${years} yr${years > 1 ? 's' : ''}`, (months || totalMonths === 0) && `${months} mo${months > 1 ? 's' : ''}`]
                     .filter(Boolean).join(' ');
                
-               const formatDate = (date) => `${date.getMonth() + 1}/${date.getFullYear()}`;
-               const dateRange = `${formatDate(startDate)} - ${end === 'present' ? 'Present' : formatDate(endDate)}`;
+               // const formatDate = (date) => `${date.getMonth() + 1}/${date.getFullYear()}`;
+               // const dateRange = `${formatDate(startDate)} - ${end === 'present' ? 'Present' : formatDate(endDate)}`;
                
                const target = el.querySelector('.job-duration');
                if (target) {
