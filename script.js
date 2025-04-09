@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
      function generateNavLinks() {
           const pages = [
                { name: "About", path: "/" },
-               // { name: "Resume", path: "/resume" },
+               { name: "Resume", path: "/resume" },
                // { name: "Publications", path: "/publications" },
                { name: "Contact", path: "/contact" }
           ];
