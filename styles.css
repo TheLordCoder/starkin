@@ -537,6 +537,13 @@ main.contact-main {
     transform: scale(1.02);
 }
 
+@media (max-width: 768px) {
+    main.contact-main {
+        padding-top: 60px;
+        align-items: flex-start;
+    }
+}
+
 /* ================ FOOTER ================ */
 
 footer {
