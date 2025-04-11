@@ -26,6 +26,7 @@
     --color-footer-text: #6e6e73;
     --color-secondary-text: #555;
     --color-label: #333;
+    --layout-width: 1100px;
 }
 
 /* Dark theme colors */ /*
@@ -375,7 +376,7 @@ header.scrolled {
 }
 
 .section-inner {
-    max-width: 720px;
+    max-width: var(--layout-width);
     margin: 0 auto;
     text-align: left;
 }
@@ -558,7 +559,7 @@ footer {
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
-    max-width: 1100px;
+    max-width: var(--layout-width);
     padding: 10px 20px;
     flex-wrap: wrap;
 }
