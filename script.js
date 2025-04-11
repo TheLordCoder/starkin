@@ -133,7 +133,8 @@ document.addEventListener("DOMContentLoaded", () => {
                if (!start || !end) return;
                
                const startDate = new Date(start + '-01');
-               const endDate = end === 'present' ? new Date() : new Date(end + '-01');
+               const isPresent = end.toLowerCase() === 'present';
+               const endDate = isPresent ? new Date() : new Date(end + '-01');
                
                if (isNaN(startDate) || isNaN(endDate)) return;
                
@@ -143,7 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
                
                const duration = [
                     years ? `${years} yr${years > 1 ? 's' : ''}` : null,
-                    (months || totalMonths === 0) ? `${months} mo${months > 1 ? 's' : ''}` : null
+                    (months || totalMonths === 0) ? `${months} mth${months > 1 ? 's' : ''}` : null
                ].filter(Boolean).join(' ');
                
                const target = el.querySelector('.job-duration');
