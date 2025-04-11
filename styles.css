@@ -16,8 +16,8 @@
     --color-header-border: 1px solid rgba(255, 255, 255, .7);
     --color-link: #f5f5f7;
     --color-link-active: #f5f5f7;
-    --color-accent: #0071e3;
-    --color-accent-hover: #005bb5;
+    --color-accent: #0A66C2;
+    --color-accent-hover: #084e9d;
     --color-form-bg: #f5f5f7;
     --color-input-bg: #fff;
     --color-input-border: #ccc;
@@ -324,6 +324,7 @@ header.scrolled {
     margin-top: 0.5rem;
     text-align: right;
     white-space: nowrap;
+    min-width: max-content;
 }
 
 .job-duration {
