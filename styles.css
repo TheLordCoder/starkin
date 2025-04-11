@@ -304,14 +304,6 @@ header.scrolled {
 
 /* ================ RESUME ================= */
 
-.experience h2 {
-    color: var(--color-accent);
-    font-size: 1rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-    text-transform: uppercase;
-}
-
 .job-company {
     font-size: 1.1rem;
     font-weight: 500;
