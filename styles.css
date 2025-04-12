@@ -402,12 +402,34 @@ header.scrolled {
     margin-bottom: 2rem;
 }
 
+@media (min-width: 769px) {
+  .job {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+
+  .job-title {
+    margin-right: auto;
+  }
+
+  .job-dates {
+    margin-left: auto;
+    margin-top: 0;
+    text-align: right;
+  }
+}
+
 @media (max-width: 768px) {
-    .job-dates {
-        text-align: left;
-        margin-top: 0.5rem;
-        white-space: normal;
-    }
+  .job {
+    display: block;
+  }
+
+  .job-dates {
+    text-align: left;
+    margin-top: 0.5rem;
+  }
 }
 
 /* ============ CONTACT FORM ============ */
