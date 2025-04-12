@@ -304,132 +304,107 @@ header.scrolled {
 
 /* ================ RESUME ================= */
 
+.education .job-company,
+.education .job-location {
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+.job {
+  margin-bottom: 2rem;
+}
+
 .job-company {
-    font-size: 1.1rem;
-    font-weight: 500;
-    margin-bottom: 0.2rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.2rem;
 }
 
 .job-dates {
-    font-size: 1.2rem;
-    font-weight: 400;
-    margin-top: 0.5rem;
-    text-align: right;
-    white-space: nowrap;
-    min-width: max-content;
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-top: 0.2rem;
+  min-width: max-content;
+  text-align: right;
+  white-space: nowrap;
 }
 
 .job-duration {
-    font-size: 0.9rem;
-    color: var(--color-secondary-text);
-    margin-top: 0.2rem;
+  color: var(--color-secondary-text);
+  font-size: 0.9rem;
+  margin-top: 0.2rem;
+}
+
+.job-header {
+  align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .job-location {
-    font-size: 1rem;
-    font-style: italic;
-    margin-bottom: 1rem;
+  font-size: 1rem;
+  font-style: italic;
+  margin-bottom: 0.2rem;
 }
 
 .job-tasks {
-    list-style-type: disc;
-    margin-bottom: 2rem;
-    padding-left: 1.5rem;
-    text-align: left;
+  list-style-type: disc;
+  margin-bottom: 2rem;
+  padding-left: 1.5rem;
+  text-align: left;
 }
 
 .job-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 0.3rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
 }
 
 .school h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.3rem;
-}
-
-.skills-list {
-    list-style-type: disc;
-    margin-top: 0.5rem;
-    padding-left: 1.5rem;
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
 }
 
 .section-block {
-    padding: 0 1rem;
-    margin-bottom: 3rem;
-}
-
-.section-inner {
-    max-width: var(--layout-width);
-    margin: 0 auto;
-    text-align: left;
+  margin-bottom: 3rem;
+  padding: 0 1rem;
 }
 
 .section-header {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: 2rem;
-}
-
-.section-line {
-    height: 4px;
-    width: 40px;
-    background-color: var(--color-accent);
-    margin-bottom: 10px;
-    border-radius: 2px;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
 }
 
 .section-header h2 {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--color-accent);
-    text-transform: uppercase;
-    margin: 0;
+  color: var(--color-accent);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+  text-transform: uppercase;
 }
 
-.education .job-company,
-.education .job-location {
-    font-size: 1rem;
-    margin-bottom: 0.2rem;
+.section-inner {
+  margin: 0 auto;
+  max-width: var(--layout-width);
+  text-align: left;
+}
+
+.section-line {
+  background-color: var(--color-accent);
+  border-radius: 2px;
+  height: 4px;
+  margin-bottom: 10px;
+  width: 40px;
 }
 
 .skills-list {
-    list-style-type: disc;
-    padding-left: 1.5rem;
-    line-height: 1.6;
-    margin-bottom: 2rem;
-}
-
-@media (min-width: 769px) {
-  .job {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    justify-content: space-between;
-  }
-
-  .job-title {
-    margin-right: auto;
-  }
-
-  .job-dates {
-    margin-left: auto;
-    margin-top: 0;
-    text-align: right;
-  }
-}
-
-@media (max-width: 768px) {
-  .job {
-    display: block;
-  }
-
-  .job-dates {
-    text-align: left;
-    margin-top: 0.5rem;
-  }
+  line-height: 1.6;
+  list-style-type: disc;
+  margin-bottom: 2rem;
+  padding-left: 1.5rem;
 }
 
 /* ============ CONTACT FORM ============ */
