@@ -325,14 +325,6 @@ header.scrolled {
     margin-top: 0.2rem;
 }
 
-.job-header {
-    align-items: flex-start;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-bottom: 1rem;
-}
-
 .job-location {
     font-size: 1rem;
     font-style: italic;
@@ -411,11 +403,6 @@ header.scrolled {
 }
 
 @media (max-width: 768px) {
-    .job-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
     .job-dates {
         text-align: left;
         margin-top: 0.5rem;
