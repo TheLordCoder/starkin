@@ -419,15 +419,25 @@ header.scrolled {
   }
 
   .job-dates {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.1rem;
+    font-weight: 400;
     margin-top: 0.5rem;
+    min-width: unset;
     text-align: left;
     white-space: normal;
   }
 
   .job-duration {
-    margin-left: 0;
-    display: block;
     margin-top: 0.2rem;
+    font-size: 0.9rem;
+    color: var(--color-secondary-text);
+  }
+
+  .job-location + .job-dates {
+    margin-top: 0.3rem;
   }
 }
 
