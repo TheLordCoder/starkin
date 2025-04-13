@@ -331,6 +331,7 @@ header.scrolled {
 
 .job-duration {
   color: var(--color-secondary-text);
+  display: inline-block; /* new line */
   font-size: 0.9rem;
   margin-top: 0.2rem;
 }
@@ -345,10 +346,11 @@ header.scrolled {
 .job-location {
   font-size: 1rem;
   font-style: italic;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.4rem;
 }
 
 .job-tasks {
+  line-height: 1.6; /* new line */
   list-style-type: disc;
   margin-bottom: 2rem;
   padding-left: 1.5rem;
@@ -414,10 +416,15 @@ header.scrolled {
   }
 
   .job-dates {
-    display: block;
-    text-align: left;
     margin-top: 0.5rem;
+    text-align: left;
     white-space: normal;
+  }
+
+  .job-duration {
+    margin-left: 0;
+    display: block;
+    margin-top: 0.2rem;
   }
 }
 
