@@ -321,7 +321,10 @@ header.scrolled {
 }
 
 .job-dates {
-  font-size: 1.2rem;
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.1rem;
   font-weight: 400;
   margin-top: 0.2rem;
   min-width: max-content;
@@ -331,7 +334,7 @@ header.scrolled {
 
 .job-duration {
   color: var(--color-secondary-text);
-  display: inline-block; /* new line */
+  display: block;
   font-size: 0.9rem;
   margin-top: 0.2rem;
 }
@@ -350,7 +353,7 @@ header.scrolled {
 }
 
 .job-tasks {
-  line-height: 1.6; /* new line */
+  line-height: 1.6;
   list-style-type: disc;
   margin-bottom: 2rem;
   padding-left: 1.5rem;
@@ -360,7 +363,7 @@ header.scrolled {
 .job-title {
   font-size: 1.5rem;
   font-weight: bold;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0;
 }
 
 .school h3 {
