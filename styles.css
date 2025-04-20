@@ -311,13 +311,14 @@ header.scrolled {
 }
 
 .job {
+  line-height: 1.5;
   margin-bottom: 2rem;
 }
 
 .job-company {
   font-size: 1.1rem;
   font-weight: 500;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.1rem;
 }
 
 .job-dates {
@@ -326,7 +327,7 @@ header.scrolled {
   flex-direction: column;
   font-size: 1.1rem;
   font-weight: 400;
-  margin-top: 0.2rem;
+  margin-top: 0.1rem;
   min-width: max-content;
   text-align: right;
   white-space: nowrap;
@@ -349,7 +350,7 @@ header.scrolled {
 .job-location {
   font-size: 1rem;
   font-style: italic;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.1rem;
 }
 
 .job-tasks {
