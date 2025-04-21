@@ -311,17 +311,21 @@ header.scrolled {
 }
 
 .job {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  margin-bottom: 2.5rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+.job-org {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.1rem;
 }
 
 .job-dates {
   align-items: flex-end;
   display: flex;
   flex-direction: column;
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 400;
   margin-top: 0.1rem;
   min-width: max-content;
@@ -343,28 +347,10 @@ header.scrolled {
   justify-content: space-between;
 }
 
-.job-info {
-  display: flex;
-  flex-direction: column;
-}
-
 .job-location {
   font-size: 1rem;
   font-style: italic;
   margin-bottom: 0.1rem;
-}
-
-.job-logo {
-  width: 50px;
-  height: 50px;
-  object-fit: contain;
-  flex-shrink: 0;
-}
-
-.job-organisation {
-  font-size: 1rem;
-  color: var(--color-secondary-text);
-  margin: 0.25rem 0;
 }
 
 .job-tasks {
@@ -376,9 +362,9 @@ header.scrolled {
 }
 
 .job-title {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: bold;
-  margin: 0;
+  margin-bottom: 0;
 }
 
 .school h3 {
